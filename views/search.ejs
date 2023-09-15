@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('partials/head.ejs') %>
+
+<body>
+  <div class="container">
+    <h1 class="mt-5">Movie Search Results</h1>
+    <% if (movies && movies.length> 0) { %>
+      <ul class="list-group mt-4">
+        <% movies.forEach(movie=> { %>
+          <li class="list-group-item">
+            <%= movie.Title %> (<%= movie.Year %>)
+          </li>
+          <% }); %>
+      </ul>
+      <% } else { %>
+        <p class="mt-4">No movies found.</p>
+        <% } %>
+  </div>
+</body>
+
+</html>
